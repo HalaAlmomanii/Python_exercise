@@ -53,10 +53,13 @@ print(AB)
 print("10"*10)
 
 
+Q11
+
 Q12
 name,age=input("enter your name and age").split(",")
 age=int(age)
-print("Hello" ,name, "you have",100-age,"Years to turn 100")
+div=100-age
+print("Hello" ,name, "at ",2019+div,"Years to turn 100")
 
 Q13
 
@@ -65,8 +68,9 @@ print("the Area is", int(base)*int(h)*.5)
 """
 
 
-
-
-
-
+#Print("Hala")
+print("this is output") #print("done")
+"""testing
+thecode
+"""
 
