@@ -55,6 +55,9 @@ print("10"*10)
 
 Q11
 
+#Print("Hala")
+print("this is output") #print("done")
+
 Q12
 name,age=input("enter your name and age").split(",")
 age=int(age)
@@ -66,11 +69,8 @@ Q13
 base, h= input ("enter base and h of tringale").split(",")
 print("the Area is", int(base)*int(h)*.5)
 """
-
-
-#Print("Hala")
-print("this is output") #print("done")
-"""testing
-thecode
-"""
-
+def greet(name,time):
+ print(f'Good {time} {name}, hope u are well')
+ 
+name,time=input("enter you name? and time with comma").split(",")
+greet(name,time)
