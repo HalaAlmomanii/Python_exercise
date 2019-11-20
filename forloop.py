@@ -95,6 +95,7 @@ x=int(input("enter number"))
 print("even") if x%2==0 else print("odd")
 
 Q9
+
 hala=9
 for x in range(1,10):
     for y in range (1,hala):
@@ -104,13 +105,13 @@ for x in range(1,10):
         print(z,end=" ")
     hala-=1
     
-    for w in range(x,1,-1) :
+    for w in range(x,0,-1) :
         print(w,end=" ")
     
-    print(1)
+    print("")
 
 
-hala=0
+
 k=1
 for x in range(8,0,-1):
     for y in range (0,k):
@@ -118,18 +119,15 @@ for x in range(8,0,-1):
 
     for z in range (1,x):
         print(z,end=" ")
-    hala+=1
+
     
-    for w in range(x,1,-1) :
+    for w in range(x,0,-1) :
         print(w,end=" ")
         
     
-    print(1)
+    print("")
     
     k+=1
-
-
- 
 Q10
 while True :
     try:
