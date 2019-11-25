@@ -95,7 +95,6 @@ x=int(input("enter number"))
 print("even") if x%2==0 else print("odd")
 
 Q9
-
 hala=9
 for x in range(1,10):
     for y in range (1,hala):
@@ -128,6 +127,9 @@ for x in range(8,0,-1):
     print("")
     
     k+=1
+
+
+ 
 Q10
 while True :
     try:
@@ -147,6 +149,8 @@ try:
 except (ZeroDivisionError,NameError):
     print(" it's Error")
 """
+
+
 
 
 

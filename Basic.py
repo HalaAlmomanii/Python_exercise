@@ -69,8 +69,3 @@ Q13
 base, h= input ("enter base and h of tringale").split(",")
 print("the Area is", int(base)*int(h)*.5)
 """
-def greet(name,time):
- print(f'Good {time} {name}, hope u are well')
- 
-name,time=input("enter you name? and time with comma").split(",")
-greet(name,time)
