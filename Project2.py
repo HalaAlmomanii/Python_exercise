@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import Tk
+from tkinter import scrolledtext
+from tkinter import messagebox
 import functools
 root=Tk()
 screen_width=root.winfo_screenwidth()
@@ -107,7 +109,7 @@ class Employee(Person):
 def deleteStudent() :
     global Stdlist
     c =Toplevel(root)
-    c.title("Add Student")
+    c.title("Del Student")
     Label(c,text =" Student Number ").grid(row=0, column=0)
     Value=IntVar()
     Number = Entry(c, textvariable=Value).grid(row=0, column=1)
@@ -126,19 +128,21 @@ def f (Value):
 def deleteEmp() :
     global Emplist
     c =Toplevel(root)
-    c.title("Add Employee")
+    c.title("Del Employee")
     Label(c,text =" Employee Number ").grid(row=0, column=0)
     Value=IntVar()
     Number = Entry(c, textvariable=Value).grid(row=0, column=1)
     print (type(Value))
-    b = Button(c, text="Delete", command=lambda:f(Value.get()))
+    b = Button(c, text="Delete", command=lambda:f1(Value.get()))
     b.grid(row=1, column=1)
-def f (Value):
+def f1 (Value):
+    
     global Emplist
     print (type(Value))
-    test = list(filter(lambda x: not int(x.number) == Value, Emplist))
+    test = list(filter(lambda x: not int(x.number) == Value , Emplist))
     print(test)
-    Emplist = test[:]    
+    Emplist = test[:] 
+    
     
     
 def maxloan(Emplist):
@@ -194,7 +198,23 @@ def MarkA(Stdlist):
         if Stdlist[index].MarkofA()>0:
             return (Stdlist[index].print_info())
 
+def Help1():
+         messagebox.showinfo("MSG", "Project 2")
 
+
+def alldatastd():
+   c=Toplevel(root)
+   txt = scrolledtext.ScrolledText(c, width=200, height=200, wrap=WORD)
+   txt.insert(END, "__________________________________________")
+   txt.insert(END, "\n")
+   txt.insert(END, "number of student "+str(numberofStudent(Stdlist)))
+   txt.insert(END, "\n")
+   txt.insert(END, "number of student "+str(maxavg(Stdlist)))
+   txt.insert(END, "\n")
+   txt.insert(END, " student with A mark "+str(MarkA(Stdlist)))
+   
+   txt.yview(END)
+   txt.pack()
 def alldata():
    c=Toplevel(root)
    txt = scrolledtext.ScrolledText(c, width=200, height=200, wrap=WORD)
@@ -211,12 +231,7 @@ def alldata():
    txt.insert(END, "maxsalary "+str(hightssalary(Emplist)))
    txt.insert(END, "\n")
    txt.insert(END, "__________________________________________")
-   txt.insert(END, "\n")
-   txt.insert(END, "number of student "+str(numberofStudent(Stdlist)))
-   txt.insert(END, "\n")
-   txt.insert(END, "number of student "+str(maxavg(Stdlist)))
-   txt.insert(END, "\n")
-   txt.insert(END, "number of student "+str(MarkA(Stdlist)))
+
    
    txt.yview(END)
    txt.pack()
@@ -300,7 +315,8 @@ def viewstd():
 top=Menu(root)
 root.config(menu=top)
 file=Menu(top,tearoff=0)
-file.add_command(label='Report',command=alldata)
+file.add_command(label='Report of Std',command=alldatastd)
+file.add_command(label='Report of Emp',command=alldata)
 file.add_separator()
 file.add_command(label='Quit',command=root.destroy)
 top.add_cascade(label='File',menu=file)
@@ -315,7 +331,7 @@ Students1.add_command(label='View',command=viewstd)
 Students1.add_command(label='Delete',command=deleteStudent)
 top.add_cascade(label='Students',menu=Students1)
 Help=Menu(top,tearoff=0)
-Help.add_command(label='About',command=help)
+Help.add_command(label='About',command=Help1)
 top.add_cascade(label='Help',menu=Help)
 
 
